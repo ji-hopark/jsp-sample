@@ -1,0 +1,24 @@
+# 실행: docker compose up -d / 종료: docker compose down
+# 접속: http://localhost:18080
+services:
+  jsp:
+    image: tomcat:9.0-jdk21-temurin
+    container_name: sdlc-jsp-preview
+    ports:
+      - "127.0.0.1:18080:8080"
+    volumes:
+      - ./index.jsp:/usr/local/tomcat/webapps/ROOT/index.jsp:ro
+      - ./accountList.jsp:/usr/local/tomcat/webapps/ROOT/accountList.jsp:ro
+      - ./accountDetail.jsp:/usr/local/tomcat/webapps/ROOT/accountDetail.jsp:ro
+      - ./transactionList.jsp:/usr/local/tomcat/webapps/ROOT/transactionList.jsp:ro
+      - ./accountListAction.jsp:/usr/local/tomcat/webapps/ROOT/accountListAction.jsp:ro
+      - ./customerList.jsp:/usr/local/tomcat/webapps/ROOT/customerList.jsp:ro
+      - ./customerDetail.jsp:/usr/local/tomcat/webapps/ROOT/customerDetail.jsp:ro
+      - ./customerListAction.jsp:/usr/local/tomcat/webapps/ROOT/customerListAction.jsp:ro
+      - ./transferList.jsp:/usr/local/tomcat/webapps/ROOT/transferList.jsp:ro
+      - ./transferListAction.jsp:/usr/local/tomcat/webapps/ROOT/transferListAction.jsp:ro
+      - ./notificationList.jsp:/usr/local/tomcat/webapps/ROOT/notificationList.jsp:ro
+      - ./notificationListAction.jsp:/usr/local/tomcat/webapps/ROOT/notificationListAction.jsp:ro
+      - ./WEB-INF:/usr/local/tomcat/webapps/ROOT/WEB-INF:ro
+      - ./js:/usr/local/tomcat/webapps/ROOT/js:ro
+      - ./css:/usr/local/tomcat/webapps/ROOT/css:ro
